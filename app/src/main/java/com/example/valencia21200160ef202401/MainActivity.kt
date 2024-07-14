@@ -1,5 +1,6 @@
 package com.example.valencia21200160ef202401
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         val tvNombreEquipo: TextView = findViewById(R.id.tvNombreEquipo)
         val tvURL: TextView = findViewById(R.id.tvURL)
         val btSave: Button = findViewById(R.id.btSave)
+        val btRegistrar: Button = findViewById(R.id.btRegister)
+        val btListar: Button = findViewById(R.id.btListado)
         val db = FirebaseFirestore.getInstance()
 
         btSave.setOnClickListener {
@@ -72,6 +75,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        }
+
+        btRegistrar.setOnClickListener {
+            val intent = Intent(this, Enfrentamientos::class.java)
+            startActivity(intent)
+        }
+
+        btListar.setOnClickListener {
+            val intent = Intent(this, ListadoEnfrentamientos::class.java)
+            startActivity(intent)
         }
     }
 }
